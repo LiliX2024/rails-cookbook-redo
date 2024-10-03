@@ -1,0 +1,13 @@
+<h1>Recipe Show Page</h1>
+<div>
+<ul>
+  <li><%= link_to @recipe.name, @recipe %></li>
+  <li><%= @recipe.description %></li>
+  <li><%= @recipe.rating %></li>
+  <li><%= image_tag(@recipe.image_url) %></li>
+</ul>
+<%# <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+<%= link_to "Back to All Recipes", recipes_path %>
+<%# <%= link_to "Add to Category", categories_path(recipe_id: @recipe.id), class: "btn btn-primary" %>

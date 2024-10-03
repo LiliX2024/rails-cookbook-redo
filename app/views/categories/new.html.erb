@@ -1,0 +1,7 @@
+<h1>Add a New Category Page</h1>
+<div>
+  <%= simple_form_for @category do |f| %>
+  <%= f.input :name, label: "Category Name" %>
+  <%= f.submit "Create Category" %>
+  <% end %>
+</div>

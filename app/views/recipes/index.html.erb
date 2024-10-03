@@ -1,0 +1,12 @@
+<h1>Recipes Index Page</h1>
+<div>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe %></li>
+    <li><%= recipe.description %></li>
+    <li><%= recipe.rating %></li>
+    <li><%= image_tag(recipe.image_url) %></li>
+    <li><%= button_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+</div>

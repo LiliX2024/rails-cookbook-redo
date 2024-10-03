@@ -1,0 +1,23 @@
+<h1>Category Show Page</h1>
+<div>
+<ul>
+    <li><%= link_to @category.name, @category %></li>
+</ul>
+<ul>
+
+<% @category.bookmarks.each do |bookmark| %>
+<li> <%= link_to bookmark.recipe.name, bookmark.recipe %> -
+  Comment: <%= bookmark.comment %>
+  <%= button_to "Delete Bookmark", category_bookmark_path(@category, bookmark), method: :delete, data: {confirm: "Are you sure?"} %>
+  </li>
+<% end %>
+</ul>
+<%# <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+<%= link_to "Back to All Categories", categories_path %>
+<%= link_to "Show All Recipes", recipes_path %>
+<%= link_to "Add a recipe", new_category_bookmark_path(@category) %>
+<%# <div class="container">
+  <h1 class="text-center">Hello, Bootstrap is Working!</h1>
+</div> %>
